@@ -63,9 +63,10 @@ namespace homework30_09
 
 
             Console.WriteLine("Задача 5. овцы");
-            Console.Write("Введите строку:");
-            
-
+            Console.Write("Введите число:");
+            int ovcy = Convert.ToInt32(Console.ReadLine());
+            for (int i = 1; i <= ovcy; i++)
+            { Console.Write($"{i} овца... "); }
 
 
 
