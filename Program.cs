@@ -101,7 +101,7 @@ namespace homework30_09
                 Console.WriteLine("Введите число эллементов массива:");
                 int i = int.Parse(Console.ReadLine());
                 
-                bool proverka = true;
+                bool proverka = true;//счетчик до отричательного числа
                 int[] massiv = new int[i];
                 int i1 = 0;
                 int sum = 0;
@@ -121,7 +121,7 @@ namespace homework30_09
                             
                            proverka = false;  }
 
-                        if (proverka==true)
+                        if (proverka==true)//Проверка на завершение последовательности
                         { sum += massiv[i];
                             i1++;
                         }
