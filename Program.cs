@@ -13,12 +13,12 @@ namespace homework30_09
         {
             Console.WriteLine("Задача 1. Форточка");
             Console.Write("Введите длину форточки:");
-            double dlina_f= double.Parse(Console.ReadLine());   
+            double dlina_f = double.Parse(Console.ReadLine());
             Console.Write("введите ширину форточки:");
             double shirina_f = double.Parse(Console.ReadLine());
             Console.Write("Введите диаметр головы:");
             double diametr_f = double.Parse(Console.ReadLine());
-             if(dlina_f-diametr_f>=1 && shirina_f - diametr_f >= 1)
+            if (dlina_f - diametr_f >= 1 && shirina_f - diametr_f >= 1)
             { Console.WriteLine("Вася сможет просунуть голову"); }
             else { Console.WriteLine("Вася не сможет просунуть голову"); }
 
@@ -43,8 +43,8 @@ namespace homework30_09
 
             Console.WriteLine("Задача 3. Бэнг Бум");
             Console.Write("Введите число:");
-            double num3= double.Parse(Console.ReadLine());
-            if (num3%3==0 && num3%5!=0) { Console.WriteLine("Бэнг"); }
+            double num3 = double.Parse(Console.ReadLine());
+            if (num3 % 3 == 0 && num3 % 5 != 0) { Console.WriteLine("Бэнг"); }
             else if (num3 % 5 == 0 && num3 % 3 != 0) { Console.WriteLine("Бум"); }
             else if (num3 % 3 == 0 && num3 % 5 == 0) { Console.WriteLine("БэнгБум"); }
             else { Console.WriteLine("Мимо"); }
@@ -52,11 +52,11 @@ namespace homework30_09
             Console.WriteLine("Задача 4. ЗАГЛАВНЫЕ БУКВЫ");
             Console.Write("Введите строку:");
             string stroka = Console.ReadLine();
-            bool zaglav = true;
- 
+            bool zaglav = true; //Счетчик, определяющий верность строки на заглавные буквы
+
             for (int i = 0; i < stroka.Length; i++)
-                if (stroka[i] == stroka.ToUpper()[i]) { zaglav = true; }
-            else { zaglav = false;
+                if (stroka[i] == stroka.ToUpper()[i]) { zaglav = true; } //Проверка строки на заглавные буквы
+                else { zaglav = false;
                     break;
                 }
             Console.WriteLine(zaglav);
@@ -67,12 +67,84 @@ namespace homework30_09
             int ovcy = Convert.ToInt32(Console.ReadLine());
             for (int i = 1; i <= ovcy; i++)
             { Console.Write($"{i} овца... "); }
+            Console.WriteLine(" ");
+
+
+              Console.WriteLine("Задача 8. Куклы");
+                int shetchikcucl=0;
+                Console.WriteLine("Введите число эллементов массива:");
+                int i81 = int.Parse(Console.ReadLine());
+                string[] cucl = new string[i81];
+            int i8 = 0;
+
+            while (i8 < i81)
+            {
+                for (i81 = 0; i81 < (cucl.Length); i81++) //Прогон по массиву
+                {
+
+
+                    Console.WriteLine("Введите элемент массива:");
+                    cucl[i81] = Console.ReadLine();
+                    if (cucl[i81] == "Hello Kitty" || cucl[i81] == "Barbie doll")
+                    { shetchikcucl++; i8++; }
+                    else { i8++; }
+
+
+                }
+            }
+            Console.WriteLine($"Количество кукол в сумке:{shetchikcucl}" );
+
+            Console.WriteLine("Задача 6. Неотрицательные числа");
+
+            try
+            {
+                Console.WriteLine("Введите число эллементов массива:");
+                int i = int.Parse(Console.ReadLine());
+                
+                bool proverka = true;
+                int[] massiv = new int[i];
+                int i1 = 0;
+                int sum = 0;
+               
+                while (i1 < i && proverka == true)
+                {
+                    
+                    
+                
+                    for (i= 0; i < (massiv.Length); i++)
+                    {
+                        Console.WriteLine("Введите элемент массива:");
+                        massiv[i] = int.Parse (Console.ReadLine());
+
+                        if (massiv[i] < 0)
+                        {
+                            
+                           proverka = false;  }
+
+                        if (proverka==true)
+                        { sum += massiv[i];
+                            i1++;
+                        }
+                        else { break; }
+                    }
+                }
+
+                double srarifm;
+                srarifm = sum / i1;
+                Console.WriteLine($"Среднее арифметическое чисел до отрицательного:{srarifm}");
+            }
+            catch (FormatException) { Console.WriteLine("Введите число!"); }
+            finally
+            {
+                Console.WriteLine("Успешно!");
+            }
+
 
 
 
 
 
         }
-        }
-}
+        } } 
+
 
