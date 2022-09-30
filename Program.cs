@@ -75,22 +75,18 @@ namespace homework30_09
                 Console.WriteLine("Введите число эллементов массива:");
                 int i81 = int.Parse(Console.ReadLine());
                 string[] cucl = new string[i81];
-            int i8 = 0;
-
-            while (i8 < i81)
-            {
+         
+            
                 for (i81 = 0; i81 < (cucl.Length); i81++) //Прогон по массиву
                 {
 
 
                     Console.WriteLine("Введите элемент массива:");
                     cucl[i81] = Console.ReadLine();
-                    if (cucl[i81] == "Hello Kitty" || cucl[i81] == "Barbie doll")
-                    { shetchikcucl++; i8++; }
-                    else { i8++; }
-
-
                 }
+                foreach (string n in cucl)
+                { if (n == "Hello Kitty" || n == "Barbie doll" )
+                    { shetchikcucl++; }
             }
             Console.WriteLine($"Количество кукол в сумке:{shetchikcucl}" );
 
@@ -104,7 +100,7 @@ namespace homework30_09
                 bool proverka = true;//счетчик до отричательного числа
                 int[] massiv = new int[i];
                 int i1 = 0;
-                int sum = 0;
+                double sum = 0;
                
                 while (i1 < i && proverka == true)
                 {
@@ -129,8 +125,8 @@ namespace homework30_09
                     }
                 }
 
-                double srarifm;
-                srarifm = sum / i1;
+                double srarifm = sum / i1;
+               
                 Console.WriteLine($"Среднее арифметическое чисел до отрицательного:{srarifm}");
             }
             catch (FormatException) { Console.WriteLine("Введите число!"); }
