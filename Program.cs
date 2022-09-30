@@ -135,12 +135,57 @@ namespace homework30_09
                 Console.WriteLine("Успешно!");
             }
 
+            Console.WriteLine("Задача 7. Карты");
+            try
+            {
+                Console.WriteLine("Введите достоинство карты:");
+                int dost = int.Parse(Console.ReadLine());
+                if (dost >= 6 && dost <= 14)
+                {
+                    if (dost == 6) { Console.WriteLine("Шестерка"); }
+                    if (dost == 7) { Console.WriteLine("Cемерка"); }
+                    if (dost == 8) { Console.WriteLine("Восьмерка"); }
+                    if (dost == 9) { Console.WriteLine("Девятка"); }
+                    if (dost == 10) { Console.WriteLine("Десятка"); }
+                    if (dost == 11) { Console.WriteLine("Валет"); }
+                    if (dost == 12) { Console.WriteLine("Дама"); }
+                    if (dost == 13) { Console.WriteLine("Король"); }
+                    if (dost == 14) { Console.WriteLine("Туз"); }
+                }
+                else { Console.WriteLine("Несуществующее значение"); }
+            }
+            catch (FormatException) { Console.WriteLine("Введите число!"); }
+
+            Console.WriteLine("Задача 11. Порядок последовательности");
+            int numm=10;
+            int[] posled = new int[numm];
+            bool proverka11 = true;
+            int num11 = 0;
+            while (num11 <= 10 && proverka11 == true)
+            {
 
 
 
+                for (numm = 0; numm < 10; numm++)
+                {
+                    Console.WriteLine("Введите элемент последовательности");
+                    posled[numm] = int.Parse(Console.ReadLine());
+                }
+                for (numm = 2; numm <= 10; numm++)
 
+                {
+                    if (posled[numm - 1] > posled[numm])
+                    {
 
-        }
+                        proverka11 = false;
+                        Console.WriteLine($"Последовательность нарушает {numm+1} элемент");//Прибавляем единицу для правильного определения номера 
+                        break;
+                    }
+                    if (proverka11 == false) { break; }//Выход при нарушении последовательности
+                }
+            } if (proverka11 == true) { Console.WriteLine("Последовательность упорядочена"); }
+
+                }
         } } 
 
 
